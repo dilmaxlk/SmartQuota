@@ -1,0 +1,80 @@
+<?php
+// Browser Session Start here
+session_start();
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
+    $user = $_SESSION['user_name'];
+    ?>
+
+
+
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">           
+            <h1>
+                SmartQuota Help
+
+            </h1>
+        </section>
+
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+                    <div class="col-md-12">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <i class="fa fa-info-circle"></i>
+
+                                <h3 class="box-title">Need premium support?</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <p>If you need premium support (operation) you have to buy our support package. contact us for more details. <br>
+
+                                    <a style="margin-top: 10px;" href="http://dilmax.lk" target="_blank" class="btn btn-success btn-flat" >Visit our website</a>
+
+                                </p> 
+
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <i class="fa fa-info-circle"></i>
+
+                                <h3 class="box-title">Need New Features?</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <p>We are continually developing our applications with new features, if you have new feature ideas you can let us know, and we will work hard to give that feature in the next update. <br>
+
+                                    <a style="margin-top: 10px;" href="https://forms.gle/EV6zrPCkfV9eek5F7" target="_blank" class="btn btn-success btn-flat" >Let us Know!</a>
+                                </p> 
+                                <p>අපි නව විශේෂාංග සමඟින් අපගේ යෙදුම් අඛණ්ඩව සංවර්ධනය කරමින් සිටිමු, ඔබට නව විශේෂාංග අදහස් තිබේ නම් ඔබට අපට දැනුම් දිය හැකි අතර, ඊළඟ යාවත්කාලීනයේදී එම විශේෂාංගය ලබා දීමට අපි වෙහෙස මහන්සි වී වැඩ කරන්නෙමු.</p>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>                
+
+                        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dilmax" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+
+                        <!-- /.box -->
+                    </div>
+
+                </div>
+            </div><!-- /.row -->
+
+
+
+        </section>
+
+    </div>       
+
+    </div><!-- /.content-wrapper -->
+
+    <?php
+    // If session isn't meet, user will redirect to login page
+} else {
+    header('Location: login.php');
+}
