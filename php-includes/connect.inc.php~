@@ -1,0 +1,28 @@
+<?php
+// Database Connection
+$dbconnect = array(
+    'server' => 'localhost',        //Server Name Ex: localhost or IP address
+    'dbuser' => 'netc_u_qsa_db',    // database user name
+    'dbpass' => 'ygf@th3mOMbvN3yc', // database user password
+    'dbname' => 'netc_qsa_db'       // database name
+);
+
+$db = new mysqli (
+        $dbconnect ['server'],
+        $dbconnect ['dbuser'],
+        $dbconnect ['dbpass'],
+        $dbconnect ['dbname']     
+        
+        );
+
+if ($db->connect_errno>0){
+    echo "Database Connect Error";
+    exit;
+}  else {
+    //echo "Success";
+    
+}
+
+
+
+?>
