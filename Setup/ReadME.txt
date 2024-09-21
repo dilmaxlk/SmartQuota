@@ -11,7 +11,6 @@ Password: 123
 
 ****DONE*******
 
-NEED PREMIUM SUPPORT?
-If you need premium support (operation) you have to buy our support package. contact us for more details.
-ඔබට සහාය (මෙහෙයුම්) අවශ්‍ය නම් ඔබට අපගේ ආධාරක පැකේජය මිලදී ගත යුතුය. වැඩි විස්තර සඳහා අප හා සම්බන්ධ වන්න.
-https://dilmax.lk/
+NEED SUPPORT?
+If you need support you have to buy our support package. 
+https://openapps.dev/support/
