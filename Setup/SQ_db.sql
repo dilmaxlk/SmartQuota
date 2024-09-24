@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 13, 2023 at 11:31 PM
--- Server version: 10.3.38-MariaDB-0ubuntu0.20.04.1
--- PHP Version: 7.4.33
+-- Generation Time: Sep 25, 2024 at 12:17 AM
+-- Server version: 5.7.40-log
+-- PHP Version: 8.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `netc_qsa_db`
+-- Database: `smartquota`
 --
 
 -- --------------------------------------------------------
@@ -37,14 +37,14 @@ CREATE TABLE `biz_details` (
   `biz_website` varchar(255) DEFAULT NULL,
   `biz_logo` varchar(255) DEFAULT NULL,
   `biz_payment_details` varchar(2000) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `biz_details`
 --
 
 INSERT INTO `biz_details` (`id`, `biz_name`, `biz_address`, `biz_tel`, `biz_hotline`, `biz_email`, `biz_website`, `biz_logo`, `biz_payment_details`) VALUES
-(1, 'Demo Company', 'No 100 Colombo 07', '011252569545', '0775777128', 'democompany@gmail.com', 'www.google.com', '827147dilmaxlogo.png', 'Bank Name: HNB Bank \r\nAccount Name: XXXXXXXXXXX X X X X \r\nAccount Number: XXX XX XX XX XXX \r\nBranch: COLOMBO BRANCH  \r\n\r\nBank Name: BOC Bank \r\nAccount Name: XXXXXXXXXXX X X X X \r\nAccount Number: XXX XX XX XX XXX \r\nBranch: COLOMBO BRANCH  \r\n\r\nBank Name: SAMPATH Bank \r\nAccount Name: XXXXXXXXXXX X X X X \r\nAccount Number: XXX XX XX XX XXX \r\nBranch: COLOMBO BRANCH');
+(1, 'Demo Company', 'No XX XXXXX XXX USA', '011252569545', '0775777128', 'democompany@gmail.com', 'www.google.com', '836510openappzlogo1.png', 'Bank Name: ABC Bank \r\nAccount Name: XXXXXXXXXXX X X X X \r\nAccount Number: XXX XX XX XX XXX \r\nBranch: XXXXX BRANCH  \r\n\r\nBank Name: ABC Bank \r\nAccount Name: XXXXXXXXXXX X X X X \r\nAccount Number: XXX XX XX XX XXX \r\nBranch: XXXXX BRANCH  \r\n\r\nBank Name: ABC Bank \r\nAccount Name: XXXXXXXXXXX X X X X \r\nAccount Number: XXX XX XX XX XXX \r\nBranch: XXXXX BRANCH');
 
 -- --------------------------------------------------------
 
@@ -58,7 +58,7 @@ CREATE TABLE `cp_logs` (
   `username` varchar(255) DEFAULT NULL,
   `logdate` date DEFAULT NULL,
   `logtime` time DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cp_logs`
@@ -68,7 +68,13 @@ INSERT INTO `cp_logs` (`id`, `userid`, `username`, `logdate`, `logtime`) VALUES
 (426, 2, 'admin', '2023-09-12', '17:16:00'),
 (427, 2, 'admin', '2023-09-12', '17:40:00'),
 (428, 2, 'admin', '2023-09-12', '17:51:00'),
-(429, 9730, 'ama', '2023-09-12', '23:17:00');
+(429, 9730, 'ama', '2023-09-12', '23:17:00'),
+(430, 2, 'admin', '2024-07-05', '01:27:00'),
+(431, 2, 'admin', '2024-09-18', '20:14:00'),
+(432, 2, 'admin', '2024-09-18', '20:24:00'),
+(433, 2, 'admin', '2024-09-20', '02:34:00'),
+(434, 2, 'admin', '2024-09-20', '02:38:00'),
+(435, 2, 'admin', '2024-09-24', '17:54:00');
 
 -- --------------------------------------------------------
 
@@ -79,7 +85,7 @@ INSERT INTO `cp_logs` (`id`, `userid`, `username`, `logdate`, `logtime`) VALUES
 CREATE TABLE `cp_settings` (
   `setting_id` int(11) NOT NULL,
   `showrecords` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cp_settings`
@@ -99,7 +105,7 @@ CREATE TABLE `cp_userpermission` (
   `permission_id` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
   `OnOff` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cp_userpermission`
@@ -134,7 +140,7 @@ CREATE TABLE `cp_users` (
   `firstname` varchar(45) NOT NULL,
   `lastname` varchar(45) NOT NULL,
   `sign_id` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cp_users`
@@ -158,14 +164,14 @@ CREATE TABLE `qas_customer` (
   `cus_email` varchar(50) NOT NULL DEFAULT '0',
   `sign_image_id` varchar(255) NOT NULL DEFAULT '0',
   `cus_reg_date` date DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `qas_customer`
 --
 
 INSERT INTO `qas_customer` (`id`, `cus_id`, `cus_name`, `cus_address`, `cus_phone`, `cus_email`, `sign_image_id`, `cus_reg_date`) VALUES
-(68, 8335, 'Nimal Perera', 'No 125, Galle Road, Nagoda Kalutara', '0711234567', 'nimal_perera@gmail.com', 'df.png', '2023-05-29');
+(68, 8335, 'John Mac', 'No 125, xxx xxxx, xxxx USA', '0711234567', 'john_mac123a@gmail.com', 'df.png', '2023-05-29');
 
 -- --------------------------------------------------------
 
@@ -180,9 +186,9 @@ CREATE TABLE `qjm_quotations` (
   `quo_date_created` date DEFAULT NULL,
   `quo_stage` varchar(50) DEFAULT NULL,
   `quo_valid_untill` date DEFAULT NULL,
-  `quo_proposal_text` longtext DEFAULT NULL,
-  `quo_customer_notes` longtext DEFAULT NULL,
-  `quo_admin_notes` longtext DEFAULT NULL,
+  `quo_proposal_text` longtext,
+  `quo_customer_notes` longtext,
+  `quo_admin_notes` longtext,
   `quo_tax_rate` double DEFAULT NULL,
   `quo_tax_rate_des` varchar(255) DEFAULT NULL,
   `quo_othercost` double DEFAULT NULL,
@@ -190,7 +196,7 @@ CREATE TABLE `qjm_quotations` (
   `quo_invoice_id` int(11) NOT NULL,
   `quo_invoice_date` date DEFAULT NULL,
   `quo_payment_status` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `qjm_quotations`
@@ -213,22 +219,22 @@ CREATE TABLE `qjm_quotation_Items` (
   `quo_item_unit_price` int(11) DEFAULT NULL,
   `quo_item_discount` double DEFAULT NULL,
   `quo_item_total` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `qjm_quotation_Items`
 --
 
 INSERT INTO `qjm_quotation_Items` (`quo_item_id`, `quo_quotation_id`, `quo_item_description`, `quo_item_qty`, `quo_item_unit_price`, `quo_item_discount`, `quo_item_total`) VALUES
-(11, 7603, 'item0111', '50', 100, 5, 4750),
-(12, 7603, 'Item02222', '5', 100, 2, 490),
-(13, 7603, 'Item03333', '500', 5, 5, 2375),
-(14, 7603, 'item04', '100', 10, 10, 900),
-(264, 7603, 'item05', '100', 10, 10, 900),
-(289, 5961, 'aaa', '100', 50, 10, 4500),
-(290, 5961, 'bbb', '50', 100, 0, 5000),
-(291, 5961, 'ccc', '50', 500, 10, 22500),
-(313, 7603, 'item06', '10', 250, 10, 2250);
+(11, 7603, 'item0111', 50, 100, 5, 4750),
+(12, 7603, 'Item02222', 5, 100, 2, 490),
+(13, 7603, 'Item03333', 500, 5, 5, 2375),
+(14, 7603, 'item04', 100, 10, 10, 900),
+(264, 7603, 'item05', 100, 10, 10, 900),
+(289, 5961, 'aaa', 100, 50, 10, 4500),
+(290, 5961, 'bbb', 50, 100, 0, 5000),
+(291, 5961, 'ccc', 50, 500, 10, 22500),
+(313, 7603, 'item06', 10, 250, 10, 2250);
 
 -- --------------------------------------------------------
 
@@ -253,14 +259,14 @@ CREATE TABLE `quota_jobs` (
   `special_instructions` varchar(2000) DEFAULT NULL,
   `payment_instructions` varchar(50) DEFAULT NULL,
   `job_status` char(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `quota_jobs`
 --
 
 INSERT INTO `quota_jobs` (`id`, `job_no`, `customer_id`, `quotation_id`, `job_Name`, `job_location`, `job_date`, `job_start_time`, `job_end_time`, `job_details`, `job_employee_details`, `materials_required`, `tools_required`, `special_instructions`, `payment_instructions`, `job_status`) VALUES
-(10, 9143, 8335, 7603, 'Computer Fix ', 'Kalutara home', '2023-08-17', '10.30AM', '2.00 PM', 'Integer dapibus aliquet massa, in posuere libero congue vitae. Proin purus est, finibus id dapibus id, luctus sed nibh. Aliquam varius vitae ante nec interdum. ', '>> Emp 01\r\n>> Emp 02\r\n>> Emp 03\r\n>> Emp 04', '>> M1\r\n>> M 2\r\n>> M1\r\n>> M 2\r\n>> M1\r\n>> M 2\r\n>> M1\r\n>> M 2', '>> Tools\r\n>> aaaaa\r\n>> bbbbv\r\n>> aaaaa\r\n>> bbbbv\r\n>> aaaaa\r\n>> bbbbv', 'Integer dapibus aliquet massa, in posuere libero congue vitae. Proin purus est, finibus id dapibus id, luctus sed nibh. Aliquam varius vitae ante nec interdum. ', 'Collect the full payment at the location', 'Completed'),
+(10, 9143, 8335, 7603, 'Computer Fix ', 'Kalutara home', '2023-08-17', '10.30AM', '2.00 PM', 'Integer dapibus aliquet massa, in posuere libero congue vitae. Proin purus est, finibus id dapibus id, luctus sed nibh. Aliquam varius vitae ante nec interdum. ', '>> Emp 01\r\n>> Emp 02\r\n>> Emp 03\r\n>> Emp 04', '>> M1\r\n>> M 2\r\n>> M1\r\n>> M 2\r\n>> M1\r\n>> M 2\r\n>> M1\r\n>> M 2', '>> Tools\r\n>> aaaaa\r\n>> bbbbv\r\n>> aaaaa\r\n>> bbbbv\r\n>> aaaaa\r\n>> bbbbv', 'Integer dapibus aliquet massa, in posuere libero congue vitae. Proin purus est, finibus id dapibus id, luctus sed nibh. Aliquam varius vitae ante nec interdum. ', 'Invoice Fully Paid', 'Completed'),
 (12, 5846, 8335, 7603, 'Demo JOB', 'Kalutara', '2023-08-30', '10', '11', 'Job Details', 'Job Employee Details\r\n', 'Job Materials Required', 'Job Tools Required', 'Special Instructions\r\n', 'Invoice Fully Paid', 'Pending');
 
 --
@@ -335,7 +341,7 @@ ALTER TABLE `biz_details`
 -- AUTO_INCREMENT for table `cp_logs`
 --
 ALTER TABLE `cp_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=430;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=436;
 
 --
 -- AUTO_INCREMENT for table `cp_settings`
@@ -365,19 +371,19 @@ ALTER TABLE `qas_customer`
 -- AUTO_INCREMENT for table `qjm_quotations`
 --
 ALTER TABLE `qjm_quotations`
-  MODIFY `quo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9994;
+  MODIFY `quo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7604;
 
 --
 -- AUTO_INCREMENT for table `qjm_quotation_Items`
 --
 ALTER TABLE `qjm_quotation_Items`
-  MODIFY `quo_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=325;
+  MODIFY `quo_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=314;
 
 --
 -- AUTO_INCREMENT for table `quota_jobs`
 --
 ALTER TABLE `quota_jobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
